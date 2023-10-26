@@ -3,20 +3,20 @@ import {resolve} from 'path'
 import {defineConfig} from 'vite'
 
 // https://vitejs.dev/config/
+// https://rollupjs.org/configuration-options/
 export default defineConfig({
   plugins: [react()],
   publicDir: false,
   build: {
-    copyPublicDir: false,
     lib: {
-      entry: resolve(__dirname, 'lib/main.js'),
+      entry: [resolve('lib/main.js')],
       formats: ['es'],
     },
     rollupOptions: {
       external: ['react', 'react/jsx-runtime'],
       output: {
-        assetFileNames: 'assets/[name][extname]',
         entryFileNames: '[name].js',
+        preserveModules: true,
       },
     },
   },
