@@ -19,14 +19,14 @@ test:
   script:
   - yarn run lint
   - yarn run test:ci
-#  artifacts:
-#    paths:
-#    - coverage/
-#    reports:
-#      coverage_report:
-#        coverage_format: cobertura
-#        path: coverage/cobertura-coverage.xml
-#  coverage: /All\sfiles.*?\s+(\d+.\d+)/
+  artifacts:
+    paths:
+    - coverage/
+    reports:
+      coverage_report:
+        coverage_format: cobertura
+        path: coverage/cobertura-coverage.xml
+  coverage: /All\sfiles.*?\s+(\d+.\d+)/
 
 publish:
   stage: release

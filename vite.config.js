@@ -3,7 +3,6 @@ import {resolve} from 'path'
 import {defineConfig} from 'vite'
 
 // https://vitejs.dev/config/
-// https://rollupjs.org/configuration-options/
 export default defineConfig({
   plugins: [react()],
   publicDir: false,
@@ -13,6 +12,7 @@ export default defineConfig({
       formats: ['es'],
     },
     rollupOptions: {
+      // https://rollupjs.org/configuration-options/
       external: ['react', 'react/jsx-runtime'],
       output: {
         entryFileNames: '[name].js',
@@ -21,11 +21,13 @@ export default defineConfig({
     },
   },
   test: {
+    // https://vitest.dev/config/
     globals: true,
     environment: 'jsdom',
     include: ['lib/**/*.spec.js'],
     coverage: {
       include: ['lib/**/*.{js,jsx}'],
+      reporter: ['text', 'html', 'cobertura'],
     },
   },
 })
