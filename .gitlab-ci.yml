@@ -1,0 +1,47 @@
+default:
+  image: node:20-bookworm
+  before_script:
+  - yarn install --immutable
+
+workflow:
+  rules:
+  - if: $CI_COMMIT_BRANCH
+
+variables:
+  NPM_TOKEN: ${CI_JOB_TOKEN}
+
+stages:
+- test
+- release
+
+test:
+  stage: test
+  script:
+  - yarn run lint
+  - yarn run test:ci
+#  artifacts:
+#    paths:
+#    - coverage/
+#    reports:
+#      coverage_report:
+#        coverage_format: cobertura
+#        path: coverage/cobertura-coverage.xml
+#  coverage: /All\sfiles.*?\s+(\d+.\d+)/
+
+publish:
+  stage: release
+  script:
+  - yarn run build
+  - yarn run release
+  rules:
+  - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
+
+pages:
+  stage: release
+  script:
+  - yarn run storybook:build
+  artifacts:
+    paths:
+    - public/
+  rules:
+  - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
