@@ -23,21 +23,24 @@ const UseBoolStateTestBed = function ({initialState}) {
 
   return (
     <div className="space-y-4">
-      <div className="space-y-2">
+      <em>
+        NOTE: Try clicking the buttons below to change the state.
+      </em>
+      <div>
         current state:{' '}
         <strong className={state ? 'text-green-500' : 'text-red-500'}>
           {String(state)}
         </strong>
       </div>
       <div className="space-x-2">
-        <button type="button" onClick={setState} className="py-1 px-4 text-neutral-600 font-medium border rounded-md">
+        <button type="button" onClick={setState} className="py-2 px-6 text-neutral-600 font-medium border border-neutral-200 rounded-md">
           Toggle
         </button>
-        <button type="button" onClick={setStateToTrueCallback} className="py-1 px-4 text-neutral-600 font-medium border rounded-md">
-          Set to true
+        <button type="button" onClick={setStateToTrueCallback} className="py-2 px-6 text-neutral-600 font-medium border border-neutral-200 rounded-md">
+          Set to `true`
         </button>
-        <button type="button" onClick={setStateToFalseCallback} className="py-1 px-4 text-neutral-600 font-medium border rounded-md">
-          Set to false
+        <button type="button" onClick={setStateToFalseCallback} className="py-2 px-6 text-neutral-600 font-medium border border-neutral-200 rounded-md">
+          Set to `false`
         </button>
       </div>
     </div>

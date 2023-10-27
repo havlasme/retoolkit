@@ -10,18 +10,29 @@ import runCallable from './runCallable'
 const RunCallableTestBed = function () {
   return (
     <div className="space-y-4">
+      <em>
+        NOTE: See examples below executing the `runCallable` utility with different arguments.
+      </em>
       <div className="space-y-2">
         <div>
           <code className="block mb-2 text-sm">
-            {"runCallable((...argument) => argument.join(' '), 'callable', 'with', 'arguments')"}
+            {'runCallable((...argument) => argument.join(\' \'), \'callable\', \'with\', \'arguments\')'}
           </code>
-          {runCallable((...argument) => argument.join(' '), 'callable', 'with', 'arguments')}
+          result:{' '}
+          <strong>
+            {runCallable((...argument) => argument.join(' '), 'callable', 'with', 'arguments')}
+          </strong>
         </div>
+      </div>
+      <div className="space-y-2">
         <div>
           <code className="block mb-2 text-sm">
-            {"runCallable('not a callable')"}
+            {'runCallable(\'not a callable\')'}
           </code>
-          {runCallable('not a callable')}
+          result:{' '}
+          <strong>
+            {runCallable('not a callable')}
+          </strong>
         </div>
       </div>
     </div>

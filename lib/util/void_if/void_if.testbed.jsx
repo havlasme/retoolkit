@@ -12,8 +12,14 @@ import void_if from './void_if'
 const VoidableTestBed = function ({isVoid, value}) {
   return (
     <div className="space-y-4">
-      <div className="space-y-2">
-        {String(void_if(isVoid, value))}
+      <em>
+        NOTE: Try changing the value of the `isVoid` prop below to see the result.
+      </em>
+      <div>
+        current value:{' '}
+        <strong>
+          {String(void_if(isVoid, value))}
+        </strong>
       </div>
     </div>
   )

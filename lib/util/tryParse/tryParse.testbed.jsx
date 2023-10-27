@@ -15,9 +15,18 @@ const TryParseTestBed = function ({jsonString}) {
 
   return (
     <div className="space-y-4">
-      <div className="space-y-2">
-        {typeof parsedValue}: {String(parsedValue)}<br/>
-        <small>@see console.log</small>
+      <em>
+        NOTE: Try changing the value of the `jsonString` prop below to see the result.
+      </em>
+      <div>
+        current value:{' '}
+        <strong>
+          {typeof parsedValue}: {String(parsedValue)}
+        </strong>
+        <br/>
+        <small>
+          @see console.log
+        </small>
       </div>
     </div>
   )

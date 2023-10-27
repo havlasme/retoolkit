@@ -25,22 +25,21 @@ const LastEventCallbackTestBed = function ({blurActiveElement, preventDefault}) 
 
   return (
     <form onSubmit={submitCallback} className="space-y-4">
+      <em>
+        NOTE: Try changing the `blurActiveElement` and `preventDefault` props below before submitting the form to see the difference.
+      </em>
       <div>
-        Submitted: {String(submitted)}
-      </div>
-      <div className="space-y-2">
-        <label>
-          <span className="block mb-1">
-            TextField
-          </span>
-          <input type="text" className="block py-1 px-2 border"/>
-        </label>
+        was submitted:{' '}
+        <strong>
+          {String(submitted)}
+        </strong>
       </div>
       <div className="space-x-2">
-        <button type="submit" className="py-1 px-4 text-neutral-600 font-medium border rounded-md">
+        <input type="text" className="py-2 px-3 border border-neutral-300"/>
+        <button type="submit" className="py-2 px-6 text-neutral-600 font-medium border border-neutral-300 rounded-md">
           Submit
         </button>
-        <button type="button" onClick={resetCallback} className="py-1 px-4 text-neutral-600 font-medium border rounded-md">
+        <button type="button" onClick={resetCallback} className="py-2 px-6 text-neutral-600 font-medium border border-neutral-300 rounded-md">
           Reset
         </button>
       </div>

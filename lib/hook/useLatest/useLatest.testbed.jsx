@@ -31,16 +31,20 @@ const UseLatestTestBed = function () {
 
   return (
     <form onSubmit={submitCallback} className="space-y-4">
-      <div className="space-y-2">
-        <input type="text" name="text" value={state} onChange={inputCallback} className="block py-1 px-2 border"/>
-        <button disabled={waiting} type="submit" className="py-1 px-4 text-neutral-600 font-medium border rounded-md">
+      <em>
+        NOTE: Try typing in the input below and submit the form. The snapshot will be taken after 5 seconds. You can change the input value while waiting for the snapshot.
+      </em>
+      <div>
+        current snapshot:{' '}
+        <strong>
+          {JSON.stringify(snapshot)}
+        </strong>
+      </div>
+      <div className="space-x-2">
+        <input type="text" name="text" value={state} onChange={inputCallback} className="py-2 px-3 border border-neutral-200"/>
+        <button disabled={waiting} type="submit" className="py-2 px-6 text-neutral-600 font-medium border border-neutral-200 rounded-md">
           {waiting ? 'Waiting...' : 'Submit'}
         </button>
-      </div>
-      <div className="space-y-2">
-        <code>
-          {JSON.stringify(snapshot)}
-        </code>
       </div>
     </form>
   )

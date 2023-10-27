@@ -12,8 +12,14 @@ import roundto from './roundto'
 const RoundToTestBed = function ({to, value}) {
   return (
     <div className="space-y-4">
-      <div className="space-y-2">
-        {String(roundto(to, value))}
+      <em>
+        NOTE: Try changing the value of the `to` and `value` props below to see the result.
+      </em>
+      <div>
+        current value:{' '}
+        <strong>
+          {String(roundto(to, value))}
+        </strong>
       </div>
     </div>
   )
