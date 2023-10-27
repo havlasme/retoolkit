@@ -7,7 +7,7 @@
     "toolkit"
   ],
   "author": "Tomáš Havlas <tomas@havlas.me>",
-  "homepage": "https://gitlab.com/havlas.me/retoolkit",
+  "homepage": "https://retoolkit.havlas.me/",
   "repository": "https://gitlab.com/havlas.me/retoolkit",
   "license": "Apache-2.0",
   "type": "module",

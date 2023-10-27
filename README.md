@@ -7,7 +7,7 @@
 [![pipeline status][pipeline-image]][pipeline-link]
 [![coverage report][coverage-image]][pipeline-link]
 
-React Toolkit.
+React Toolkit. See storybook documentation (playground) at https://retoolkit.havlas.me/. 
 
 ## installation
 
